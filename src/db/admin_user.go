@@ -2,6 +2,7 @@ package db
 
 import (
 	"time"
+
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
@@ -18,6 +19,8 @@ type AdminUser struct {
 // BeforeSave hook to hash password before saving
 func (u *AdminUser) BeforeSave(tx *gorm.DB) (err error) {
 	if u.PasswordHash != "" { // Only hash if password is set/changed
+		//print PasswordHash
+		//fmt.Println("PasswordHash: ", u.PasswordHash)
 		hashedPassword, err := bcrypt.GenerateFromPassword([]byte(u.PasswordHash), bcrypt.DefaultCost)
 		if err != nil {
 			return err

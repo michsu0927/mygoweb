@@ -5,7 +5,7 @@ import (
 	"web/src/db"
 	"web/src/lib"
 
-	"github.com/gorilla/sessions"            // For sessions.Options
+	"github.com/gorilla/sessions"              // For sessions.Options
 	"github.com/labstack/echo-contrib/session" // Ensure this is imported
 	"github.com/labstack/echo/v4"
 )
@@ -30,7 +30,7 @@ func Login(c echo.Context) error {
 		// User not found or other database error
 		return c.Render(http.StatusOK, "login.html", lib.PyDict{
 			"title": "Login",
-			"error": "Invalid username or password",
+			"error": "Invalid username or password 0",
 		})
 	}
 
@@ -44,11 +44,11 @@ func Login(c echo.Context) error {
 
 	// Password is correct, create a session
 	sess, _ := session.Get("session", c) // Use the echo-contrib session directly
-	sess.Options = &sessions.Options{ // Set options before saving
+	sess.Options = &sessions.Options{    // Set options before saving
 		Path:     "/",
 		MaxAge:   86400 * 7, // Example: 7 days
 		HttpOnly: true,
-		Secure:   c.Request().IsTLS(), // Set Secure based on TLS
+		//Secure:   c.Request().IsTLS(), // Set Secure based on TLS
 		// SameSite: http.SameSiteLaxMode, // Recommended for most cases
 	}
 	sess.Values["user_id"] = adminUser.ID
@@ -72,7 +72,7 @@ func Logout(c echo.Context) error {
 	sess.Values["user_id"] = nil
 	sess.Values["username"] = nil
 	// Setting MaxAge to -1 deletes the cookie
-	sess.Options = &sessions.Options{Path: "/", MaxAge: -1, HttpOnly: true, Secure: c.Request().IsTLS()}
+	sess.Options = &sessions.Options{Path: "/", MaxAge: -1, HttpOnly: true}
 	if err := sess.Save(c.Request(), c.Response()); err != nil {
 		c.Logger().Error("Failed to save session on logout:", err)
 		// Even if saving fails, attempt to redirect

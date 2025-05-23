@@ -14,6 +14,7 @@ import (
 	"net/http"
 	echopprof "web/src/pprof"
 
+	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware" //v4 use v4 middleware
 )
@@ -90,7 +91,7 @@ func Init() *echo.Echo {
 	e.GET("/hello/*", controller.Demo)
 
 	// Group for authenticated routes
-	adminGroup := e.Group("") // Apply to root or a specific path like /admin
+	adminGroup := e.Group("")                 // Apply to root or a specific path like /admin
 	adminGroup.Use(controller.AuthMiddleware) // Use the AuthMiddleware
 
 	adminGroup.GET("/", func(c echo.Context) error {
@@ -102,7 +103,7 @@ func Init() *echo.Echo {
 		// We assume it's configured. Let's try to get username from session.
 		// The AuthMiddleware should ensure session exists and has user_id.
 		// We also stored "username" in the Login function.
-		
+
 		_sess, err_sess := session.Get("session", c)
 		if err_sess != nil {
 			// Handle error, maybe redirect to login or show error
@@ -116,8 +117,8 @@ func Init() *echo.Echo {
 			// If username is not in session, redirect or error
 			return c.Redirect(http.StatusFound, "/login/")
 		}
-		
-		userIP := GetIP(c) 
+
+		userIP := GetIP(c)
 		output := "Hello, " + username + "! Your IP is " + userIP
 		return c.String(http.StatusOK, output)
 	})
@@ -144,8 +145,8 @@ func Init() *echo.Echo {
 
 	e.GET("/login/", controller.ShowLoginForm) // Trailing slash for consistency
 	e.POST("/login/", controller.Login)
-	e.GET("/setup-admin/", controller.SetupAdminUser) // Add trailing slash
-	e.GET("/logout/", controller.Logout)              // Add trailing slash
+	//e.GET("/setup-admin/", controller.SetupAdminUser) // Add trailing slash
+	e.GET("/logout/", controller.Logout) // Add trailing slash
 
 	//所有 public folder 的文件都可以被 access ,例如 public/robots.txt -> http://yourhost/robots.txt
 	e.Static("/", "public")
