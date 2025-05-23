@@ -80,6 +80,7 @@ func Init() {
 	db.AutoMigrate(&UserPointBalance{})
 	db.AutoMigrate(&TransactionRecord{})
 	db.AutoMigrate(&Task{})
+	db.AutoMigrate(&AdminUser{})
 }
 
 // Manager Return Database Struct

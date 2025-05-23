@@ -89,16 +89,36 @@ func Init() *echo.Echo {
 
 	e.GET("/hello/*", controller.Demo)
 
-	//e.GET("/", api.Home)
-	e.GET("/", func(c echo.Context) error {
-		//fmt.Printf("/ Hello")
-		//c.Logger().Info("/")
-		userIP := GetIP(c)
-		output := "Hello, World!" + userIP
-		//get data from DB
-		// Suggested code may be subject to a license. Learn more: ~LicenseLog:4158231234.
-		// DB := db.Manager()
-		// DB.q
+	// Group for authenticated routes
+	adminGroup := e.Group("") // Apply to root or a specific path like /admin
+	adminGroup.Use(controller.AuthMiddleware) // Use the AuthMiddleware
+
+	adminGroup.GET("/", func(c echo.Context) error {
+		// This route is now protected
+		// You can get user from session if needed:
+		// sess, _ := session.Get("session", c) // session.Get is from "github.com/labstack/echo-contrib/session"
+		// For this to work, session middleware must be configured in main.go:
+		// e.Use(session.Middleware(sessions.NewCookieStore([]byte("secret-key"))))
+		// We assume it's configured. Let's try to get username from session.
+		// The AuthMiddleware should ensure session exists and has user_id.
+		// We also stored "username" in the Login function.
+		
+		_sess, err_sess := session.Get("session", c)
+		if err_sess != nil {
+			// Handle error, maybe redirect to login or show error
+			// This case should ideally be caught by AuthMiddleware redirecting if session is invalid
+			return c.String(http.StatusInternalServerError, "Session error")
+		}
+
+		username, ok := _sess.Values["username"].(string)
+		if !ok || username == "" {
+			// This case should also ideally be caught by AuthMiddleware
+			// If username is not in session, redirect or error
+			return c.Redirect(http.StatusFound, "/login/")
+		}
+		
+		userIP := GetIP(c) 
+		output := "Hello, " + username + "! Your IP is " + userIP
 		return c.String(http.StatusOK, output)
 	})
 
@@ -121,6 +141,11 @@ func Init() *echo.Echo {
 	//userPointBalance balance
 	e.GET("/api/balance/:userID/*", controller.Users)
 	e.GET("/api/balance/*", controller.Users)
+
+	e.GET("/login/", controller.ShowLoginForm) // Trailing slash for consistency
+	e.POST("/login/", controller.Login)
+	e.GET("/setup-admin/", controller.SetupAdminUser) // Add trailing slash
+	e.GET("/logout/", controller.Logout)              // Add trailing slash
 
 	//所有 public folder 的文件都可以被 access ,例如 public/robots.txt -> http://yourhost/robots.txt
 	e.Static("/", "public")
