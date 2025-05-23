@@ -1,0 +1,16 @@
+{{define "bootstrap-alert" -}}
+<!-- Alert -->
+    <div id="{{.Id}}" class="alert {{.AlertClass}} alert-dismissible fade show" role="alert">
+        {{if .H4}}<h4 class="alert-heading">{{.H4}}</h4>{{end}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{if .H4}}<p>{{end }}
+            {{- if .Strong}}<strong>{{.Strong}}</strong>&nbsp;{{end -}}
+            {{.Description -}}
+        {{if .H4}}</p>{{end}}
+        {{range .Blocks -}}
+        <p class="mb-0">{{.}}</p>
+        {{end}}
+    </div>
+{{end}}

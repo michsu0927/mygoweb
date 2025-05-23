@@ -1,0 +1,9 @@
+{{define "bootstrap-breadCrumb"}}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" {{- if .BackgroudColor}} style="background-color:{{.BackgroudColor}}"{{end}} >
+            {{range .Breadcrumb -}}
+            <li class="breadcrumb-item {{.Active}}" {{- if .Target}} target="{{.Target}}" {{end}}><a href="{{.Link}}">{{.Text}}</a></li>
+            {{end}}
+        </ol>
+    </nav>
+{{end}}

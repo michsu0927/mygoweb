@@ -1,0 +1,12 @@
+{{define "bootstrap-button" -}}
+<!-- button -->
+    {{- if eq .Element 1 -}}
+    <a id="{{.Id}}" class="btn {{.ButtonClass}} {{.Active}} {{.Disabled}}" href="{{.Link}}" role="button" {{- if .Target}} target="{{.Target}}"{{end}}>{{.Text}}</a>
+    {{end -}}
+    {{- if eq .Element 2 -}}
+    <button id="{{.Id}}"  class="btn {{.ButtonClass}} {{.SizeClass}} {{.BlockClass}}" {{.Attr}} type="{{.Type}}">{{.Text}}</button>
+    {{end -}}
+    {{- if eq .Element 3 -}}
+    <input id="{{.Id}}"  class="btn {{.ButtonClass}} {{.SizeClass}}  {{.BlockClass}}" {{.Attr}} type="{{.Type}}" value="{{.Text}}" {{- if .Name}} target="{{.Name}}"{{end}} >
+    {{end -}}
+{{end}}

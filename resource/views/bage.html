@@ -1,0 +1,14 @@
+{{define "bootstrap-badge" -}}
+<!-- Bage -->
+    {{if eq .Type 1 -}}
+    <button id="{{.Id}}" type="button" class="btn {{.BadgeClass}} {{.BadgePill}}">
+        {{.Text}}<span class="badge badge-light">{{.BadgeNum}}</span>
+    </button>
+    {{end -}}
+    {{if eq .Type 2 -}}
+    <span class="badge {{.BadgeClass}} {{.BadgePill}}">{{.Text}}</span>
+    {{end -}}
+    {{if eq .Type 3 -}}
+    <a href="#" class="badge {{.BadgeClass}} {{.BadgePill}}">{{.Text}}</a>
+    {{end -}}
+{{end}}

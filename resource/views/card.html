@@ -1,0 +1,15 @@
+{{define "bootstrap-card" -}}
+<!-- card -->
+    <div id="{{.Id}}" class="card w-{{.Width}}" >
+        {{if .Image -}}
+        <img src="{{.Image}}" class="card-img-top" alt="{{.imageTitle}}" title="{{.imageTitle}}" >
+        {{end -}}
+        <div class="card-body">
+        <h5 class="card-title">{{.Title}}</h5>
+        <p class="card-text">{{.Text}}</p>
+        {{if .Link -}}
+        <a href="{{.Link}}" class="{{.LinkClass}}" {{if .LinkTarget }}target="{{.LinkTarget}}"{{end}} >{{.LinkText}}</a>
+        {{end -}}
+        </div>
+    </div>
+{{end}}

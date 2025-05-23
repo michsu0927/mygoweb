@@ -1,0 +1,38 @@
+{{define "bootstrap-buttonGroup" -}}
+<!-- button group https://getbootstrap.com/docs/4.5/components/button-group/ -->
+    {{ $x := .ButtonClass }}
+    {{- if .Radio -}}
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        {{range .GroupButton -}}
+        <label class="btn {{$x}} {{.SizeClass}} {{ .Active }}">
+            <input type="radio" name="{{ .Name }}" value="{{ .Value }}" id="{{ .Id }}" {{ if .Active }} checked {{end}} > {{ .Text }}
+        </label>
+        {{- end}}
+    </div>
+    {{end -}}
+    <!--<div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Left</button>
+        <button type="button" class="btn btn-secondary">Middle</button>
+        <button type="button" class="btn btn-secondary">Right</button>
+    </div> -->
+    {{- if .Group -}}
+    <div class="{{.GroupClass}}" role="group" aria-label="Button group with nested dropdown">
+        {{- range .GroupButton}}
+            {{ if .Sub -}}
+            <div class="btn-group" role="group">
+                <button id="{{.Id}}" type="button" class="btn {{.SizeClass}} {{$x}} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{.Text}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="{{.Id}}">
+                    {{range .Sub -}}
+                    <a id="{{.Id}}" class="dropdown-item {{$x}} {{.Active}} {{.Disabled}}" href="{{.Link}}" role="button" {{- if .Target}} target="{{.Target}}"{{end}}>{{.Text}}</a>
+                    {{end -}}
+                </div>
+            </div>            
+            {{else -}}
+            <a id="{{.Id}}" class="btn {{$x}} {{.Active}} {{.Disabled}}" href="{{.Link}}" role="button" {{- if .Target}} target="{{.Target}}"{{end}}>{{.Text}}</a>
+            {{end -}}
+        {{- end}}
+    </div>
+    {{end -}}
+{{end}}

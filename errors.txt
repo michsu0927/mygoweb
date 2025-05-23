@@ -1,0 +1,114 @@
+E0117 02:41:43.184002   29108 library.go:117] Package fmt does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.206778   29108 library.go:117] Package bufio does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.207380   29108 library.go:117] Package bytes does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.209365   29108 library.go:117] Package context does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.209651   29108 library.go:117] Package crypto/tls does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.209822   29108 library.go:117] Package encoding does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.209980   29108 library.go:117] Package encoding/json does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.212193   29108 library.go:117] Package encoding/xml does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.212469   29108 library.go:117] Package errors does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.253587   29108 library.go:101] "golang.org/x/sys/unix" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/x/sys@v0.28.0/unix/asm_linux_amd64.s
+E0117 02:41:43.322596   29108 library.go:117] Package encoding/binary does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.322799   29108 library.go:117] Package math/bits does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.322888   29108 library.go:101] "runtime" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/asm_amd64.h
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/asm_ppc64x.h
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/funcdata.h
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/go_tls.h
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/textflag.h
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/asm.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/asm_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/duff_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/memclr_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/memmove_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/preempt_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/rt0_linux_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/sys_linux_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/test_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/time_linux_amd64.s
+E0117 02:41:43.323137   29108 library.go:117] Package runtime does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.323256   29108 library.go:117] Package sort does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.323340   29108 library.go:117] Package strconv does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.323421   29108 library.go:117] Package strings does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.323505   29108 library.go:117] Package sync does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.323587   29108 library.go:101] "syscall" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/syscall/asm_linux_amd64.s
+E0117 02:41:43.323734   29108 library.go:117] Package syscall does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.323826   29108 library.go:117] Package time does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.323917   29108 library.go:117] Package io does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.323999   29108 library.go:117] Package os does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.369220   29108 library.go:101] "sync/atomic" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/sync/atomic/asm.s
+E0117 02:41:43.369406   29108 library.go:117] Package sync/atomic does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.369489   29108 library.go:101] "reflect" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/reflect/asm_amd64.s
+E0117 02:41:43.369562   29108 library.go:117] Package reflect does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.369650   29108 library.go:117] Package path does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.397513   29108 library.go:117] Package crypto does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.397720   29108 library.go:117] Package crypto/ecdsa does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.397812   29108 library.go:117] Package crypto/elliptic does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.397896   29108 library.go:117] Package crypto/hmac does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.397976   29108 library.go:117] Package crypto/rand does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.398089   29108 library.go:117] Package crypto/rsa does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.398169   29108 library.go:101] "crypto/sha256" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/crypto/sha256/sha256block_amd64.s
+E0117 02:41:43.398245   29108 library.go:117] Package crypto/sha256 does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.398313   29108 library.go:101] "crypto/sha512" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/crypto/sha512/sha512block_amd64.s
+E0117 02:41:43.398394   29108 library.go:117] Package crypto/sha512 does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.398470   29108 library.go:117] Package crypto/x509 does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.398538   29108 library.go:117] Package crypto/x509/pkix does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.398715   29108 library.go:117] Package encoding/asn1 does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.398811   29108 library.go:117] Package encoding/base64 does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.398894   29108 library.go:117] Package encoding/hex does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.398975   29108 library.go:117] Package encoding/pem does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.399087   29108 library.go:101] "math/big" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/math/big/arith_amd64.s
+E0117 02:41:43.399160   29108 library.go:117] Package math/big does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.399226   29108 library.go:117] Package net/http does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.399297   29108 library.go:101] "runtime/debug" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/runtime/debug/debug.s
+E0117 02:41:43.399368   29108 library.go:117] Package runtime/debug does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.463437   29108 library.go:117] Package unicode/utf8 does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.486253   29108 library.go:117] Package container/list does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.488193   29108 library.go:117] Package log does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.514053   29108 library.go:101] "math" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/math/dim_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/math/exp_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/math/floor_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/math/hypot_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/math/log_amd64.s
+E0117 02:41:43.516043   29108 library.go:117] Package math does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.517536   29108 library.go:117] Package math/rand does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.519463   29108 library.go:117] Package net does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.522225   29108 library.go:117] Package path/filepath does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.548445   29108 library.go:117] Package compress/gzip does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.606012   29108 library.go:117] Package net/textproto does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.669535   29108 library.go:117] Package io/fs does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.669624   29108 library.go:117] Package net/http/httptrace does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.669643   29108 library.go:117] Package net/url does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.718384   29108 library.go:117] Package mime/multipart does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.764673   29108 library.go:101] "crypto/subtle" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/crypto/subtle/xor_amd64.s
+E0117 02:41:43.765932   29108 library.go:117] Package crypto/subtle does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.789864   29108 library.go:117] Package regexp does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.815143   29108 library.go:117] Package html/template does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.819947   29108 library.go:117] Package net/http/httputil does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.866792   29108 library.go:117] Package encoding/base32 does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.867287   29108 library.go:117] Package encoding/gob does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.895661   29108 library.go:101] "crypto/aes" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/crypto/aes/asm_amd64.s
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/crypto/aes/gcm_amd64.s
+E0117 02:41:43.895896   29108 library.go:117] Package crypto/aes does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.895994   29108 library.go:117] Package crypto/cipher does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.896088   29108 library.go:117] Package hash does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.926408   29108 library.go:117] Package net/http/pprof does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.963197   29108 library.go:101] "crypto/md5" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/crypto/md5/md5block_amd64.s
+E0117 02:41:43.963406   29108 library.go:117] Package crypto/md5 does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+W0117 02:41:43.963500   29108 library.go:101] "crypto/sha1" contains non-Go code that can't be inspected for further dependencies:
+/home/user/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.4.linux-amd64/src/crypto/sha1/sha1block_amd64.s
+E0117 02:41:43.963577   29108 library.go:117] Package crypto/sha1 does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+E0117 02:41:43.963656   29108 library.go:117] Package database/sql/driver does not have module info. Non go modules projects are no longer supported. For feedback, refer to https://github.com/google/go-licenses/issues/128.
+F0117 02:41:43.963746   29108 main.go:77] some errors occurred when loading direct and transitive dependency packages
