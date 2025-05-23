@@ -11,6 +11,7 @@
     pkgs.go-licenses
     pkgs.python311
     pkgs.gcc
+    pkgs.openssh
   ];
   # Sets environment variables in the workspace
   env = { 
