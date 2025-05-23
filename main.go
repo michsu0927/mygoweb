@@ -75,7 +75,7 @@ func main() {
 			}()
 			// Wait for RunTask to finish
 			<-runTaskDone
-			lib.Log("runTaskDone finished")
+			//lib.Log("runTaskDone finished")
 
 			//if expireTime not hh:ii:ss expireTimeParts !=3 , ExpiredTask will not run
 			expireTimeStr := os.Getenv("expireTime")

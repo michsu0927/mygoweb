@@ -24,6 +24,7 @@ func Login(c echo.Context) error {
 
 	adminUser := db.AdminUser{}
 	DB := db.Manager()
+	lib.Log("CheckPassword Start")
 
 	// Find the user by username
 	if err := DB.Where("username = ?", username).First(&adminUser).Error; err != nil {
@@ -36,11 +37,13 @@ func Login(c echo.Context) error {
 
 	// Check the password
 	if !adminUser.CheckPassword(password) {
+		lib.Log("CheckPassword")
 		return c.Render(http.StatusOK, "login.html", lib.PyDict{
 			"title": "Login",
 			"error": "Invalid username or password",
 		})
 	}
+	lib.Log("CheckPassword")
 
 	// Password is correct, create a session
 	sess, _ := session.Get("session", c) // Use the echo-contrib session directly
@@ -54,15 +57,20 @@ func Login(c echo.Context) error {
 	sess.Values["user_id"] = adminUser.ID
 	sess.Values["username"] = adminUser.Username
 	if err := sess.Save(c.Request(), c.Response()); err != nil {
-		c.Logger().Error("Failed to save session:", err)
+		//c.Logger().Error("Failed to save session:", err)
+		lib.Log("Failed to save session:")
 		return c.Render(http.StatusOK, "login.html", lib.PyDict{
 			"title": "Login",
 			"error": "Login failed. Please try again.",
 		})
 	}
-
+	lib.Log("Login successful")
 	// Redirect to a protected area, e.g., home page or an admin dashboard
-	return c.Redirect(http.StatusFound, "/")
+	//return c.Redirect(http.StatusFound, "/")
+	return c.JSON(http.StatusOK, lib.PyDict{
+		"message": "Login successful",
+	})
+	//return c.Redirect(http.StatusFound, "/success/")
 }
 
 // Logout clears the session and redirects to the login page

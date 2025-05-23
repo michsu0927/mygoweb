@@ -145,6 +145,11 @@ func Init() *echo.Echo {
 
 	e.GET("/login/", controller.ShowLoginForm) // Trailing slash for consistency
 	e.POST("/login/", controller.Login)
+	///success/ return json
+	e.GET("/success/", func(c echo.Context) error {
+		output := fmt.Sprintf("Hello, Success!")
+		return c.String(http.StatusOK, output)
+	})
 	//e.GET("/setup-admin/", controller.SetupAdminUser) // Add trailing slash
 	e.GET("/logout/", controller.Logout) // Add trailing slash
 

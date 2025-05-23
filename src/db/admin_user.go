@@ -2,6 +2,9 @@ package db
 
 import (
 	"time"
+	"web/src/lib"
+
+	"strings"
 
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
@@ -21,10 +24,18 @@ func (u *AdminUser) BeforeSave(tx *gorm.DB) (err error) {
 	if u.PasswordHash != "" { // Only hash if password is set/changed
 		//print PasswordHash
 		//fmt.Println("PasswordHash: ", u.PasswordHash)
+		// u.PasswordHash to string
+		parts := strings.Split(u.PasswordHash, "?monospaceUid")
+		u.PasswordHash = parts[0]
+
+		u.PasswordHash = string(u.PasswordHash)
+		lib.Log("PasswordHash:" + u.PasswordHash)
+
 		hashedPassword, err := bcrypt.GenerateFromPassword([]byte(u.PasswordHash), bcrypt.DefaultCost)
 		if err != nil {
 			return err
 		}
+
 		u.PasswordHash = string(hashedPassword)
 	}
 	return
@@ -32,6 +43,8 @@ func (u *AdminUser) BeforeSave(tx *gorm.DB) (err error) {
 
 // CheckPassword checks if the provided password is correct
 func (u *AdminUser) CheckPassword(password string) bool {
-	err := bcrypt.CompareHashAndPassword([]byte(u.PasswordHash), []byte(password))
+	lib.Log(string(u.PasswordHash))
+	err := bcrypt.CompareHashAndPassword([]byte(string(u.PasswordHash)), []byte(password))
+	//lib.Log(err.Error())
 	return err == nil
 }
